@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Georama:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@300;500;600&display=swap');
 
 *{
     box-sizing: border-box;
@@ -22,10 +22,51 @@ header .header {
     flex-grow: 1;
     background-color: #003847;
 }
+header nav {
+	font-family: 'Georama', sans-serif;
+	margin-top: 2%;
+}
+header nav ul {
+	clear: left;
+	float: left;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	left: 50%;
+	list-style: none;
+	text-align: center;
+}
+header nav ul li {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	right: 50%;
+}
+header nav ul li a {
+	display: block;
+	margin: 0 0 0 1px;
+	padding: 5px 15px;
+	color: #9d8a5e;
+	text-decoration: none;
+}
+header nav ul li a:hover {
+	color: #369432;
+	text-decoration: underline;
+	text-underline-offset: 7px;
+	transition: all .4s ease;
+	-webkit-transition: all .4s ease;
+}
+header nav ul li a.active,
+header nav ul li a.active:hover {
+	color: #369432;
+}
 header .header h1 {
     font-family: 'Georama', sans-serif;
     font-size: 400%;
     color: #9d8a5e;
+	margin-top: 7%;
     text-align:center;
 }
 header .header img {
@@ -38,8 +79,24 @@ header .header img {
     transform: translate(-50%, -50%);
 }
 
+main #topBtn {
+	display: none;
+	right: 5%;
+	position: fixed;
+	top: 550px;
+	z-index: 99;
+	
+}
+
 .row {
-    margin: 20px;
+	font-family: 'Georama', sans-serif;
+    margin: 15px;
+}
+.row h1 {
+	margin-bottom: 50px;
+	text-align: center;
+	text-decoration: underline;
+	text-underline-offset: 15px;
 }
 .row, .row > .column {
     padding: 8px;
@@ -56,15 +113,54 @@ header .header img {
 main {
     margin: auto;
 }
-main img {
+#projects img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     
 }
-main h3, p {
+#projects h3, p {
     font-family: 'Georama', sans-serif; 
     text-align: center;
+}
+
+#about p {
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+#contact {
+	padding-bottom: 3%;
+}
+
+#contact-list {
+	float: right;
+	padding-left: 40%;
+}
+#contact-list i {
+	display: inline-block;
+	width: 100%;
+    text-align: left;
+	padding-bottom: 2%;
+}
+#contact-list a {
+	font-family: 'Georama', sans-serif;
+	font-weight: 300;
+	color: #003847;
+	padding-left: 7%;
+	text-decoration: none;
+}
+#contact-list a:hover {
+	color: #9d8a5e;
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+}
+
+footer p {
+	font-family: 'Georama', sans-serif;
+	font-size: .75em;
+	font-weight: 300;
+	text-align: center;
 }
 
 /* Responsive Design */
