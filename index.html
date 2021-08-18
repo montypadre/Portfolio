@@ -13,13 +13,23 @@
      <header>
         <div class="header">
           <nav id="site-nav">
+            <div id="nav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <div class="overlay-content" id="overlay-content">
+                <a href="\#projects">PROJECTS</a>
+                <a href="\#about">ABOUT</a>
+                <a href="\#contact">CONTACT</a>					
+              </div>
+            </div>
+            <span class="nav-btn" onclick="openNav()">&#9776;</span>
             <ul id="primary-menu">
               <li id="menu-item"><a href="\#projects">Projects</a></li>
               <li id="menu-item"><a href="\#about">About</a></li>
               <li id="menu-item"><a href="\#contact">Contact</a></li>
             </ul>
           </nav>
-          <h1>Web Developer</h1>
+          <h1>Michael Reynolds</h1>
+          <h2>Web Developer</h2>
           <img src="img/reynolds_pic.png" alt="Michael Reynolds">
         </div>
      </header>
@@ -54,7 +64,7 @@
           <p>I live and work in Mobile, AL. The son of an embedded systems engineer, I have been surrounded by tech for most of my life. I am interested in using technology to create interesting things and improve communities by bringing added value to whatever enterprise I am associated with.<br><br>
             I received my education and training at the University of South Alabama, earning a BA in Information Technology in 2020. My experience there taught me many things, including the importance of planning and organization in order to ensure a project's success.<br><br>
           I don't shy away from the unknown and so have developed a varied skillset. My focus at university was mobile-first responsive web development using HTML, CSS, JavaScript, PHP, and MySQL. Early on in my school career I attempted a startup in which I utilized the WordPress CMS to build websites and plugins, some of which incorporated E-commerce elements. This role also introduced me to API technology. <br><br>
-          My internship utilized frontend web development tools, including AJAX, in an MVC framework. I am comfortable with Linux server administration, LAMP stack development, and bash scripting. I have been studying blockchain-specific tools and independent game development since my junior year. This led directly to my stint as Lead Game Developer for a Binance Smart Chain-based DAO. I learned C#/Unity in this role, as well as becoming familiar with WebGL. I also learned how to write and deploy smart contracts using the Solidity programming language and worked heavily with third-party SDKs.<br><br>
+          My internship utilized frontend web development tools, including AJAX, in an MVC framework. I am comfortable with Linux server administration, LAMP stack development, and bash scripting. I have been studying blockchain-specific tools and independent game development since my junior year. This led directly to my role as Lead Game Developer for a Binance Smart Chain-based DAO. I learned C#/Unity in this role, as well as becoming familiar with WebGL. I also learned how to write and deploy smart contracts using the Solidity programming language and worked heavily with third-party SDKs.<br><br>
           I believe that knowledge is power and I have been on an unending quest for it my entire life. I have a passion for learning and am quick to pick up new concepts.</p>
         </div>
         <div id="contact" class="row">
@@ -64,6 +74,11 @@
               <i class="fa fa-envelope fa-lg"><a href="mailto:montypadre77@gmail.com">montypadre77@gmail.com</a></i>
               <i class="fab fa-github fa-lg"><a href="https://github.com/montypadre">https://github.com/montypadre</a></i>
               <i class="fab fa-linkedin-in fa-lg"><a href="https://www.linkedin.com/in/michael-reynolds-89b5251a4/">https://www.linkedin.com/in/michael-reynolds-89b5251a4/</a></i>
+            </div>
+            <div id="contact-list-responsive">
+              <a href="mailto:montypadre77@gmail.com"><i class="fa fa-envelope fa-lg"></i></a>
+              <a href="https://github.com/montypadre"><i class="fab fa-github fa-lg"></i></a>
+              <a href="https://www.linkedin.com/in/michael-reynolds-89b5251a4/"><i class="fab fa-linkedin-in fa-lg"></i></a>
             </div>
           </div>
         </div>
@@ -97,6 +112,10 @@
 		  function closeNav() {
 		      document.getElementById("nav").style.height = "0%";
 		  }
+
+      $("#nav").click(function() {
+        this.style.height = "0%";
+      })
 	  </script>
   </body>
 </html>

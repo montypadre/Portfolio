@@ -34,7 +34,6 @@ header nav ul {
 	position: relative;
 	left: 50%;
 	list-style: none;
-	text-align: center;
 }
 header nav ul li {
 	display: block;
@@ -67,16 +66,22 @@ header .header h1 {
     font-size: 400%;
     color: #9d8a5e;
 	margin-top: 7%;
-    text-align:center;
+    text-align: center;
+}
+header .header h2 {
+    font-family: 'Georama', sans-serif;
+    color: #9d8a5e;
+	margin-top: -25px;
+    text-align: center;
 }
 header .header img {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    left: 50%;
-    top: 70%;
-    transform: translate(-50%, -50%);
+	display: block;
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 7%;
 }
 
 main #topBtn {
@@ -116,8 +121,7 @@ main {
 #projects img {
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    
+    margin-right: auto;  
 }
 #projects h3, p {
     font-family: 'Georama', sans-serif; 
@@ -132,15 +136,15 @@ main {
 #contact {
 	padding-bottom: 3%;
 }
-
-#contact-list {
-	float: right;
-	padding-left: 40%;
+#contact-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-left: 40%;
 }
 #contact-list i {
 	display: inline-block;
 	width: 100%;
-    text-align: left;
+    text-align: justify;
 	padding-bottom: 2%;
 }
 #contact-list a {
@@ -164,10 +168,58 @@ footer p {
 }
 
 /* Responsive Design */
-@media screen and (min-width: 280px) and (max-width: 768px) {
+@media (max-width: 480px) {
+	header {
+		height: 525px;
+	}
+	header .header h1 {	
+		font-size: 275%;
+		margin-top: 15%;
+	}
+	.column {
+		display: flex;
+		float: none;
+		width: 50%;
+		justify-content: center;
+	}
+	.content {
+		margin-left: 110%;
+	}
+	.content p {
+		margin-left: -15%;
+		margin-right: -15%;
+	}
+	#about p {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	#contact-wrapper {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#contact-list {
+		display: none;
+	}
+	#contact-list-responsive a {
+		color: #003847;
+		padding: 10px;
+	}
+	#contact-list-responsive a:hover {
+		color: #9d8a5e;
+		transition: all .2s ease;
+		-webkit-transition: all .2s ease;
+	}
 	/* Menu */
+	#primary-menu {
+		display: none;
+	}
+	.nav-btn {
+		font-size: 1.5em;
+		padding-right: 7%;
+		float: right;
+	}
 	/* The Overlay (background) */
-	.overlay {
+	nav .overlay {
 		height: 0%;
 		width: 100%;
 		position: fixed;
@@ -179,14 +231,14 @@ footer p {
 		overflow-x: hidden;
 		transition: 0.5s;
 	}
-	.overlay-content {
+	nav .overlay-content {
 		position: relative;
 		top: 25%;
 		width: 100%;
 		text-align: center;
 		margin-top: 30px;
 	}
-	.overlay a {
+	nav .overlay a {
 		padding: 8px;
 		text-decoration: none;
 		font-size: 36px;
@@ -194,29 +246,223 @@ footer p {
 		display: block;
 		transition: 0.3s;
 	}
-	.overlay a:hover, .overlay a:focus {
+	nav .overlay a:hover, nav .overlay a:focus {
 		color: #f1f1f1;
 	}
-	.overlay .closebtn {
+	nav .overlay .closebtn {
 		position: absolute;
 		top: 20px;
 		right: 45px;
 		font-size: 60px;
 	}
-	.overlay a { font-size: 20px }
-	.overlay .closebtn {
+	nav .overlay a { font-size: 20px }
+	nav .overlay .closebtn {
 		font-size: 40px;
 		top: 15px;
 		right: 35px;
 	}
 }
-@media screen and (min-width: 769px) and (max-width: 1400px) {
-	.closebtn, .head-wrapper span, .overlay-content {
+@media (min-width: 481px) and (max-width: 767px) {
+	header {
+		height: 575px;
+	}
+	header .header h1 {	
+		font-size: 300%;
+		color: #9d8a5e;
+		margin-top: 10%;
+	}
+	.column {
+		display: flex;
+		float: none;
+		width: 50%;
+		justify-content: center;
+	}
+	.content {
+		margin-left: 110%;
+	}
+	.content p {
+		margin-left: -30%;
+		margin-right: -30%;
+	}
+	#about p {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+	#contact-wrapper {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#contact-list {
+		display: none;
+	}
+	#contact-list-responsive a {
+		color: #003847;
+		padding: 10px;
+	}
+	#contact-list-responsive a:hover {
+		color: #9d8a5e;
+		transition: all .2s ease;
+		-webkit-transition: all .2s ease;
+	}
+	/* Menu */
+	#primary-menu {
+		display: none;
+	}
+	.nav-btn {
+		font-size: 1.5em;
+		padding-right: 7%;
+		float: right;
+	}
+	/* The Overlay (background) */
+	nav .overlay {
+		height: 0%;
+		width: 100%;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		background-color: rgb(0,0,0);
+		background-color: rgba(0,0,0,0.9);
+		overflow-x: hidden;
+		transition: 0.5s;
+	}
+	nav .overlay-content {
+		position: relative;
+		top: 25%;
+		width: 100%;
+		text-align: center;
+		margin-top: 30px;
+	}
+	nav .overlay a {
+		padding: 8px;
+		text-decoration: none;
+		font-size: 36px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+	}
+	nav .overlay a:hover, nav .overlay a:focus {
+		color: #f1f1f1;
+	}
+	nav .overlay .closebtn {
+		position: absolute;
+		top: 20px;
+		right: 45px;
+		font-size: 60px;
+	}
+	nav .overlay a { font-size: 20px }
+	nav .overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	header {
+		height: 650px;
+	}
+	.column {
+		display: flex;
+		float: none;
+		width: 50%;
+		justify-content: center;
+	}
+	.content {
+		margin-left: 110%;
+	}
+	.content p {
+		margin-left: -40%;
+		margin-right: -40%;
+	}
+	#about p {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+	#contact-wrapper {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#contact-list {
+		display: none;
+	}
+	#contact-list-responsive a {
+		color: #003847;
+		padding: 10px;
+	}
+	#contact-list-responsive a:hover {
+		color: #9d8a5e;
+		transition: all .2s ease;
+		-webkit-transition: all .2s ease;
+	}
+	/* Menu */
+	#primary-menu {
+		display: none;
+	}
+	.nav-btn {
+		font-size: 1.5em;
+		padding-right: 7%;
+		float: right;
+	}
+	/* The Overlay (background) */
+	nav .overlay {
+		height: 0%;
+		width: 100%;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		background-color: rgb(0,0,0);
+		background-color: rgba(0,0,0,0.9);
+		overflow-x: hidden;
+		transition: 0.5s;
+	}
+	nav .overlay-content {
+		position: relative;
+		top: 25%;
+		width: 100%;
+		text-align: center;
+		margin-top: 30px;
+	}
+	nav .overlay a {
+		padding: 8px;
+		text-decoration: none;
+		font-size: 36px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+	}
+	nav .overlay a:hover, nav .overlay a:focus {
+		color: #f1f1f1;
+	}
+	nav .overlay .closebtn {
+		position: absolute;
+		top: 20px;
+		right: 45px;
+		font-size: 60px;
+	}
+	nav .overlay a { font-size: 20px }
+	nav .overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+	nav .closebtn, nav span, nav .overlay-content {
+		display: none;
+	}
+	#contact-list-responsive {
 		display: none;
 	}
 }
-@media screen and (min-width: 1401px) and (max-width: 2560px) {
-	.closebtn, .head-wrapper span, .overlay-content {
+@media (min-width: 1281px) {
+	nav .closebtn, nav span, nav .overlay-content {
+		display: none;
+	}
+	#contact-wrapper {
+		margin-left: 32%;
+	}
+	#contact-list-responsive {
 		display: none;
 	}
 }
